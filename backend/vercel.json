@@ -11,5 +11,6 @@
       "src": "/(.*)",
       "dest": "src/index.ts"
     }
-  ]
+  ],
+  "buildCommand": "cd ../shared && npm install && npm run build && cd ../backend && npm install && npm run build"
 }

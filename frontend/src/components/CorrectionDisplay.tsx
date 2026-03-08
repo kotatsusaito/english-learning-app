@@ -39,7 +39,7 @@ const CorrectionDisplay: React.FC<CorrectionDisplayProps> = ({ correction }) => 
               <div className="correction-display__suggestions">
                 <strong>Alternative expressions:</strong>
                 <ul>
-                  {correction.suggestions.map((suggestion, index) => (
+                  {correction.suggestions.map((suggestion: string, index: number) => (
                     <li key={index}>{suggestion}</li>
                   ))}
                 </ul>
@@ -92,7 +92,7 @@ const CorrectionDisplay: React.FC<CorrectionDisplayProps> = ({ correction }) => 
         <div className="correction-display__suggestions">
           <h3 className="correction-display__suggestions-title">Suggestions for Improvement</h3>
           <ul>
-            {correction.suggestions.map((suggestion, index) => (
+            {correction.suggestions.map((suggestion: string, index: number) => (
               <li key={index}>{suggestion}</li>
             ))}
           </ul>
