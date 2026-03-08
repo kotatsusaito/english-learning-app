@@ -1,0 +1,20 @@
+{
+  "name": "english-learning-app",
+  "version": "1.0.0",
+  "description": "AI-powered English learning application",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend",
+    "shared"
+  ],
+  "scripts": {
+    "test": "npm run test --workspaces",
+    "build": "npm run build --workspaces",
+    "dev:backend": "npm run dev -w backend",
+    "dev:frontend": "npm run dev -w frontend"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}

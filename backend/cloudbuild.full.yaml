@@ -1,0 +1,35 @@
+steps:
+  # Install and build shared package
+  - name: 'node:18'
+    dir: '../shared'
+    entrypoint: 'npm'
+    args: ['install']
+  
+  - name: 'node:18'
+    dir: '../shared'
+    entrypoint: 'npm'
+    args: ['run', 'build']
+  
+  # Install and build backend
+  - name: 'node:18'
+    dir: '.'
+    entrypoint: 'npm'
+    args: ['install']
+  
+  - name: 'node:18'
+    dir: '.'
+    entrypoint: 'npm'
+    args: ['run', 'build']
+  
+  # Build Docker image
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '-t'
+      - 'gcr.io/$PROJECT_ID/english-learning-backend:latest'
+      - '-f'
+      - 'Dockerfile.prod'
+      - '.'
+
+images:
+  - 'gcr.io/$PROJECT_ID/english-learning-backend:latest'
